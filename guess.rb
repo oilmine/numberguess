@@ -1,8 +1,10 @@
 def logic(range)
   num = rand(range)
+  guesses = 0
   loop do
     print "GUESS THE NUMBER: "
     guess = gets.chomp.to_i
+    guesses = guesses + 1
     if guess > range
       puts "Your guess is not in range."
     elsif guess < num
@@ -11,8 +13,20 @@ def logic(range)
       puts "Your guess is toohi!"
     elsif guess == num
       puts "You guessed it! The number was #{num}."
+      puts "You used #{guesses} guesses."
       break
     end
+  end 
+end
+
+def bin_logic(range, df)
+  num = rand(range)
+  print "YOU HAVE ONE CHANCE: "
+  guess = gets.chomp.to_i
+  if guess == num 
+    puts "You guessed it! The number was #{num}."
+  else
+    puts "You didn't guess it! The number was #{num}."
   end
 end
 
@@ -44,6 +58,6 @@ loop do
   elsif df == "hard"
     logic(HD_RANGE)
   elsif df == "binary"
-    logic(BIN_RANGE)
+    bin_logic(BIN_RANGE, df)
   end
 end
