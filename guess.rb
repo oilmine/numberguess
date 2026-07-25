@@ -1,3 +1,7 @@
+def clear
+  system("clear") || system("cls")
+end
+
 def logic(range)
   num = rand(range)
   guesses = 0
@@ -19,9 +23,9 @@ def logic(range)
   end 
 end
 
-def bin_logic(range, df)
-  num = rand(range)
-  print "YOU HAVE ONE CHANCE: "
+def bin_logic
+  num = rand(2)
+  print "YOU HAVE ONE CHANCE (PICK 0 OR 1): "
   guess = gets.chomp.to_i
   if guess == num 
     puts "You guessed it! The number was #{num}."
@@ -30,34 +34,52 @@ def bin_logic(range, df)
   end
 end
 
-system("clear")
-
 EZ_RANGE = 10
 MD_RANGE = 50
 HD_RANGE = 100
-BIN_RANGE = 2
+
+clear
+puts ""
+puts "#" * 40
+puts "            NUMBERGUESS             "
+puts "#" * 40
+
 
 loop do
-  df_lvl = ["easy", "medium", "hard", "binary"]
+  df_lvl = ["easy", "medium", "hard"]
+  gm_lvl = ["classic", "binary"]
 
   puts ""
-  print "Enter difficulty level (Easy, Medium, Hard, Binary): "
-  df = gets.chomp
-  df = df.downcase
+  print "Enter gamemode (Classic, Binary): "
+  gm = gets.chomp
+  gm = gm.downcase
   puts ""
 
-  if !df_lvl.include?(df)
-    puts "Invalid difficulty."
+  if !gm_lvl.include?(gm)
+    puts "Invalid gamemode."
     exit
   end
+  
+  if gm == "classic"
+    print "Enter difficulty level (Easy, Medium, Hard): "
+    df = gets.chomp
+    df = df.downcase
+    puts ""
 
-  if df == "easy"
-    logic(EZ_RANGE)
-  elsif df == "medium"
-    logic(MD_RANGE)
-  elsif df == "hard"
-    logic(HD_RANGE)
-  elsif df == "binary"
-    bin_logic(BIN_RANGE, df)
+    if !df_lvl.include?(df)
+      puts "Invalid difficulty."
+      exit
+    end
+
+    if df == "easy"
+      logic(EZ_RANGE)
+    elsif df == "medium"
+      logic(MD_RANGE)
+    elsif df == "hard"
+      logic(HD_RANGE)
+    end
+  end
+  if gm == "binary"
+    bin_logic
   end
 end
