@@ -16,18 +16,19 @@ def logic(range)
   end
 end
 
-df_lvl = ["easy", "medium", "hard", "binary"]
+EZ_RANGE = 10
+MD_RANGE = 50
+HD_RANGE = 100
+BIN_RANGE = 2
+
+loop do
+  df_lvl = ["easy", "medium", "hard", "binary"]
 
 puts ""
 print "TYPE DIFFICULTY LEVEL -> "
 df = gets.chomp
 df = df.downcase
 puts ""
-
-EZ_RANGE = 10
-MD_RANGE = 50
-HD_RANGE = 100
-BIN_RANGE = 2
 
 if !df_lvl.include?(df)
   puts "Invalid difficulty."
@@ -42,4 +43,5 @@ elsif df == "hard"
   logic(HD_RANGE)
 elsif df == "binary"
   logic(BIN_RANGE)
+end
 end
