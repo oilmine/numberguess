@@ -1,3 +1,6 @@
+require "bundler/setup"
+require "colorize"
+
 def clear
   system("clear") || system("cls")
 end
@@ -10,11 +13,11 @@ def logic(range)
     guess = gets.chomp.to_i
     guesses = guesses + 1
     if guess > range
-      puts "Your guess is not in range."
+      puts "Your guess is not in range.".red
     elsif guess < num
-      puts "Your guess is too low!"
+      puts "Your guess is too low!".blue
     elsif guess > num
-      puts "Your guess is toohi!"
+      puts "Your guess is toohi!".magenta
     elsif guess == num
       puts "You guessed it! The number was #{num}."
       puts "You used #{guesses} guesses."
@@ -28,22 +31,21 @@ def bin_logic
   print "YOU HAVE ONE CHANCE (PICK 0 OR 1): "
   guess = gets.chomp.to_i
   if guess == num 
-    puts "You guessed it! The number was #{num}."
+    puts "You guessed it! The number was #{num}.".green
   else
-    puts "You didn't guess it! The number was #{num}."
+    puts "You didn't guess it! The number was #{num}.".red
   end
 end
 
-EZ_RANGE = 10
-MD_RANGE = 50
-HD_RANGE = 100
+EASY_RANGE = 10
+MID_RANGE = 50
+HARD_RANGE = 100
 
 clear
 puts ""
-puts "#" * 40
-puts "            NUMBERGUESS             "
-puts "#" * 40
-
+puts "#".cyan * 40
+puts "             NUMBERGUESS            "
+puts "#".cyan * 40
 
 loop do
   df_lvl = ["easy", "medium", "hard"]
@@ -72,11 +74,11 @@ loop do
     end
 
     if df == "easy"
-      logic(EZ_RANGE)
+      logic(EASY_RANGE)
     elsif df == "medium"
-      logic(MD_RANGE)
+      logic(MID_RANGE)
     elsif df == "hard"
-      logic(HD_RANGE)
+      logic(HARD_RANGE)
     end
   end
   if gm == "binary"
