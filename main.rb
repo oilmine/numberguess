@@ -5,9 +5,10 @@ require_relative "src/ui"
 
 title
 
-loop do
+begin
+  loop do
   gm_lvl = ["classic", "binary", "hoc"]
-  df_lvl = ["easy", "medium", "hard"]
+  df_lvl = ["easy", "medium", "hard", "custom"]
 
   puts ""
   puts "______________________________________"
@@ -27,10 +28,11 @@ loop do
   end
   
   if gm == "classic"
-    puts "____________________________________"
+    puts "_________________________________________________"
     print "|   Easy   |   "
     print "Medium   |   "
-    print "Hard   |  "
+    print "Hard   |   "
+    print "Custom   |   "
     puts ""
     puts ""
     print "CHOOSE THE DIFFICULTY: "
@@ -49,6 +51,8 @@ loop do
       cl_logic(MID_RANGE)
     elsif df == "hard"
       cl_logic(HARD_RANGE)
+    elsif df == "custom"
+      cl_cs_logic
     end
   end
 
@@ -57,9 +61,10 @@ loop do
   end
 
   if gm == "hoc"
+    puts "____________________________________"
     print "|   Easy   |   "
     print "Medium   |   "
-    print "Hard   |  "
+    print "Hard   |   "
     puts ""
     puts ""
     print "CHOOSE THE DIFFICULTY: "
@@ -81,3 +86,8 @@ loop do
     end
   end
 end
+rescue Interrupt
+  puts "\nQuitting..."
+  exit
+end
+

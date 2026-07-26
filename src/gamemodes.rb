@@ -19,6 +19,36 @@ def cl_logic(range)
   end 
 end
 
+def cl_cs_logic()
+  print "Enter minimum number: "
+  cus_min = gets.chomp.to_i
+  print "Enter maximum number: "
+  cus_max = gets.chomp.to_i
+  print "Enter guess amount: "
+  guess_amount = gets.chomp.to_i
+  guesses = 0
+  num = rand(cus_min..cus_max)
+  until guesses == guess_amount
+    puts ""
+    print "GUESS THE NUMBER: "
+    guess = gets.chomp.to_i
+    guesses = guesses + 1
+    if guess < cus_min || guess > cus_max
+      puts "Your guess is not in range.".red
+    elsif guess < num
+      puts "⬇ Your guess is too low!".blue
+    elsif guess > num
+      puts "⬆ Your guess is toohi!".magenta
+    elsif guess == num
+      victory = true
+      puts "You guessed it! The number was #{num}."
+      puts "You used #{guesses} guesses."
+      break
+    end
+  end
+  puts "You ran out of guesses! The number was #{num}." unless victory == true
+end
+
 def bin_logic
   num = rand(2)
   print "YOU HAVE ONE CHANCE (PICK 0 OR 1): "
@@ -62,4 +92,4 @@ def hoc_logic(range)
       puts "🏔️ Frozen"
     end
   end
-end
+end  
