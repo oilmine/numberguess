@@ -1,5 +1,4 @@
 require "bundler/setup"
-require "colorize"
 require_relative "src/config"
 require_relative "src/gamemodes"
 require_relative "src/ui"
