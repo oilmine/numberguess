@@ -6,11 +6,17 @@ require_relative "src/ui"
 title
 
 loop do
+  gm_lvl = ["classic", "binary", "hoc"]
   df_lvl = ["easy", "medium", "hard"]
-  gm_lvl = ["classic", "binary"]
 
   puts ""
-  print "Enter gamemode (Classic, Binary): "
+  puts "______________________________________"
+  print "|   Classic   |   "
+  print "Binary   |   "
+  print "HoC   |  "
+  puts ""
+  puts ""
+  print "CHOOSE THE GAMEMODE: "
   gm = gets.chomp
   gm = gm.downcase
   puts ""
@@ -21,7 +27,13 @@ loop do
   end
   
   if gm == "classic"
-    print "Enter difficulty level (Easy, Medium, Hard): "
+    puts "____________________________________"
+    print "|   Easy   |   "
+    print "Medium   |   "
+    print "Hard   |  "
+    puts ""
+    puts ""
+    print "CHOOSE THE DIFFICULTY: "
     df = gets.chomp
     df = df.downcase
     puts ""
@@ -32,14 +44,40 @@ loop do
     end
 
     if df == "easy"
-      logic(EASY_RANGE)
+      cl_logic(EASY_RANGE)
     elsif df == "medium"
-      logic(MID_RANGE)
+      cl_logic(MID_RANGE)
     elsif df == "hard"
-      logic(HARD_RANGE)
+      cl_logic(HARD_RANGE)
     end
   end
+
   if gm == "binary"
     bin_logic
+  end
+
+  if gm == "hoc"
+    print "|   Easy   |   "
+    print "Medium   |   "
+    print "Hard   |  "
+    puts ""
+    puts ""
+    print "CHOOSE THE DIFFICULTY: "
+    df = gets.chomp
+    df = df.downcase
+    puts ""
+
+    if !df_lvl.include?(df)
+      puts "Invalid difficulty."
+      exit
+    end
+
+    if df == "easy"
+      hoc_logic(EASY_RANGE)
+    elsif df == "medium"
+      hoc_logic(MID_RANGE)
+    elsif df == "hard"
+      hoc_logic(HARD_RANGE)
+    end
   end
 end
