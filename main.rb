@@ -88,5 +88,6 @@ begin
 end
 rescue Interrupt
   puts "\nQuitting..."
+  clear
   exit
 end
