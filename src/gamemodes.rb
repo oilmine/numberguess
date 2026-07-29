@@ -93,3 +93,28 @@ def hoc_logic(range)
     end
   end
 end  
+
+def play_reverse()
+  puts "Enter lower bound: "
+  l_bound = gets.chomp.to_i
+  puts "Enter upper bound: "
+  u_bound = gets.chomp.to_i
+
+  guess = 0
+  guesses = 0
+  loop do
+    guess = (l_bound + u_bound) / 2
+    puts "Is your number #{guess} ? (H/L/C) => "
+    ans = gets.chomp.downcase
+    guesses = guesses + 1
+    if ans == "h"
+      l_bound = guess + 1
+    elsif ans == "l"
+      u_bound = guess - 1
+    elsif ans == "c"
+      puts "Yay! The number indeed was #{guess}."
+      puts "I got it in #{guesses} guess(es)."
+      break
+    end
+  end
+end

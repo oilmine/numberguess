@@ -7,14 +7,15 @@ title
 
 begin
   loop do
-  gm_lvl = ["classic", "binary", "hoc"]
+  gm_lvl = ["classic", "binary", "hoc", "reverse"]
   df_lvl = ["easy", "medium", "hard", "custom"]
 
   puts ""
-  puts "______________________________________"
+  puts "____________________________________________________"
   print "|   Classic   |   "
   print "Binary   |   "
-  print "HoC   |  "
+  print "HoC   |   "
+  print "Reverse   |  "
   puts ""
   puts ""
   print "CHOOSE THE GAMEMODE: "
@@ -84,6 +85,10 @@ begin
     elsif df == "hard"
       hoc_logic(HARD_RANGE)
     end
+  end
+
+  if gm == "reverse"
+    play_reverse
   end
 end
 rescue Interrupt
