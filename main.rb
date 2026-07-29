@@ -10,14 +10,12 @@ begin
   gm_lvl = ["classic", "binary", "hoc", "reverse"]
   df_lvl = ["easy", "medium", "hard", "custom"]
 
-  puts ""
-  puts "____________________________________________________"
+  puts "\n____________________________________________________"
   print "|   Classic   |   "
   print "Binary   |   "
   print "HoC   |   "
   print "Reverse   |  "
-  puts ""
-  puts ""
+  puts "\n\n"
   print "CHOOSE THE GAMEMODE: "
   gm = gets.chomp
   gm = gm.downcase
@@ -25,7 +23,6 @@ begin
 
   if !gm_lvl.include?(gm)
     puts "Invalid gamemode."
-    exit
   end
   
   if gm == "classic"
@@ -34,8 +31,7 @@ begin
     print "Medium   |   "
     print "Hard   |   "
     print "Custom   |   "
-    puts ""
-    puts ""
+    puts "\n\n"
     print "CHOOSE THE DIFFICULTY: "
     df = gets.chomp
     df = df.downcase
@@ -43,7 +39,6 @@ begin
 
     if !df_lvl.include?(df)
       puts "Invalid difficulty."
-      exit
     end
 
     if df == "easy"
@@ -66,16 +61,13 @@ begin
     print "|   Easy   |   "
     print "Medium   |   "
     print "Hard   |   "
-    puts ""
-    puts ""
+    puts "\n\n"
     print "CHOOSE THE DIFFICULTY: "
-    df = gets.chomp
-    df = df.downcase
+    df = gets.chomp.downcase
     puts ""
 
     if !df_lvl.include?(df)
       puts "Invalid difficulty."
-      exit
     end
 
     if df == "easy"

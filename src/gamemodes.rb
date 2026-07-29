@@ -29,8 +29,7 @@ def cl_cs_logic()
   guesses = 0
   num = rand(cus_min..cus_max)
   until guesses == guess_amount
-    puts ""
-    print "GUESS THE NUMBER: "
+    print "\nGUESS THE NUMBER: "
     guess = gets.chomp.to_i
     guesses = guesses + 1
     if guess < cus_min || guess > cus_max
@@ -76,17 +75,17 @@ def hoc_logic(range)
       puts "You guessed it! The number was #{num}."
       puts "You used #{guesses} guesses."
       break
-    elsif diff <= 5
+    elsif diff <= 2
       puts "🔥 Flames"
-    elsif diff <= 10
+    elsif diff <= 4
       puts "🧯 Hot"
-    elsif diff <= 20
+    elsif diff <= 8
       puts "🌡️ Warm"
-    elsif diff <= 25
+    elsif diff <= 12
       puts "⭐ Normal"
-    elsif diff <= 30
+    elsif diff <= 18
       puts "❄️ Cold"
-    elsif diff <= 35
+    elsif diff <= 25
       puts "🌨️ Snowstorm"
     else
       puts "🏔️ Frozen"
@@ -99,7 +98,6 @@ def play_reverse()
   l_bound = gets.chomp.to_i
   puts "Enter upper bound: "
   u_bound = gets.chomp.to_i
-
   guess = 0
   guesses = 0
   loop do
