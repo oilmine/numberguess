@@ -5,6 +5,7 @@ def cl_logic(range)
     print "GUESS THE NUMBER: "
     guess = gets.chomp.to_i
     guesses = guesses + 1
+
     if guess > range
       puts "Your guess is not in range.".red
     elsif guess < num
@@ -20,14 +21,17 @@ def cl_logic(range)
 end
 
 def cl_cs_logic()
+
   print "Enter minimum number: "
   cus_min = gets.chomp.to_i
   print "Enter maximum number: "
   cus_max = gets.chomp.to_i
   print "Enter guess amount: "
+
   guess_amount = gets.chomp.to_i
   guesses = 0
   num = rand(cus_min..cus_max)
+
   until guesses == guess_amount
     print "\nGUESS THE NUMBER: "
     guess = gets.chomp.to_i
@@ -71,6 +75,7 @@ def hoc_logic(range)
       next
     end
     diff = (guess - num).abs
+
     if guess == num
       puts "You guessed it! The number was #{num}."
       puts "You used #{guesses} guesses."
@@ -94,12 +99,14 @@ def hoc_logic(range)
 end  
 
 def play_reverse()
+
   puts "Enter lower bound: "
   l_bound = gets.chomp.to_i
   puts "Enter upper bound: "
   u_bound = gets.chomp.to_i
   guess = 0
   guesses = 0
+
   loop do
     guess = (l_bound + u_bound) / 2
     puts "Is your number #{guess} ? (H/L/C) => "
