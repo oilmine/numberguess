@@ -13,15 +13,15 @@ def cl_logic(range)
     elsif guess > num
       puts "⬆ Your guess is toohi!".magenta
     elsif guess == num
-      puts "You guessed it! The number was #{num}."
-      puts "You used #{guesses} guesses."
+      puts ""
+      puts "You guessed it! The number was #{num}.".green
+      puts "You used #{guesses} guesses.".green
       break
     end
   end 
 end
 
 def cl_cs_logic()
-
   print "Enter minimum number: "
   cus_min = gets.chomp.to_i
   print "Enter maximum number: "
@@ -36,6 +36,7 @@ def cl_cs_logic()
     print "\nGUESS THE NUMBER: "
     guess = gets.chomp.to_i
     guesses = guesses + 1
+
     if guess < cus_min || guess > cus_max
       puts "Your guess is not in range.".red
     elsif guess < num
@@ -44,18 +45,20 @@ def cl_cs_logic()
       puts "⬆ Your guess is toohi!".magenta
     elsif guess == num
       victory = true
-      puts "You guessed it! The number was #{num}."
-      puts "You used #{guesses} guesses."
+      puts ""
+      puts "You guessed it! The number was #{num}.".green
+      puts "You used #{guesses} guesses.".green
       break
     end
   end
-  puts "You ran out of guesses! The number was #{num}." unless victory == true
+  puts "You ran out of guesses! The number was #{num}.".red unless victory == true
 end
 
 def bin_logic
   num = rand(2)
   print "YOU HAVE ONE CHANCE (PICK 0 OR 1): "
   guess = gets.chomp.to_i
+
   if guess == num 
     puts "You guessed it! The number was #{num}.".green
   else
@@ -70,6 +73,7 @@ def hoc_logic(range)
     print "GUESS: "
     guess = gets.chomp.to_i
     guesses = guesses + 1
+
     if guess < 0 || guess > range
       puts "🪏  Ice age (Out of range)"
       next
@@ -77,29 +81,29 @@ def hoc_logic(range)
     diff = (guess - num).abs
 
     if guess == num
-      puts "You guessed it! The number was #{num}."
-      puts "You used #{guesses} guesses."
+      puts ""
+      puts "You guessed it! The number was #{num}.".green
+      puts "You used #{guesses} guesses.".green
       break
     elsif diff <= 2
       puts "🔥 Flames"
     elsif diff <= 4
       puts "🧯 Hot"
     elsif diff <= 8
-      puts "🌡️ Warm"
+      puts "🌡️  Warm"
     elsif diff <= 12
-      puts "⭐ Normal"
+      puts "⭐  Normal"
     elsif diff <= 18
-      puts "❄️ Cold"
+      puts "❄️  Cold"
     elsif diff <= 25
-      puts "🌨️ Snowstorm"
+      puts "🌨️  Snowstorm"
     else
-      puts "🏔️ Frozen"
+      puts "🏔️  Frozen"
     end
   end
 end  
 
 def play_reverse()
-
   puts "Enter lower bound: "
   l_bound = gets.chomp.to_i
   puts "Enter upper bound: "
@@ -112,13 +116,15 @@ def play_reverse()
     puts "Is your number #{guess} ? (H/L/C) => "
     ans = gets.chomp.downcase
     guesses = guesses + 1
+
     if ans == "h"
       l_bound = guess + 1
     elsif ans == "l"
       u_bound = guess - 1
     elsif ans == "c"
-      puts "Yay! The number indeed was #{guess}."
-      puts "I got it in #{guesses} guess(es)."
+      puts ""
+      puts "Yay! The number indeed was #{guess}.".green
+      puts "I got it in #{guesses} guess(es).".green
       break
     end
   end
