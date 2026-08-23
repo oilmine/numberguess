@@ -6,6 +6,7 @@ A simple number guessing game in your terminal, built with Ruby!
 - 📻 Classic (guess the number with infinite guesses)
 - 1️⃣ Binary (you only get one chance to pick either 0 or 1)
 - 🔥 HoC (Hot or Cold)
+- 🔄 Reverse (computer guesses your number)
 
 The game has 3 difficulties: <b>Easy, Medium and Hard</b>, along with a <b>"Custom" </b>difficulty in Classic mode where you can create your own game by changing the minimum and maximum numbers and guesses.
 
