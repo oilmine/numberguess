@@ -13,8 +13,7 @@ def cl_logic(range)
     elsif guess > num
       puts "⬆ Your guess is toohi!".magenta
     elsif guess == num
-      puts ""
-      puts "You guessed it! The number was #{num}.".green
+      puts "\nYou guessed it! The number was #{num}.".green
       puts "You used #{guesses} guesses.".green
       break
     end
@@ -45,8 +44,7 @@ def cl_cs_logic()
       puts "⬆ Your guess is toohi!".magenta
     elsif guess == num
       victory = true
-      puts ""
-      puts "You guessed it! The number was #{num}.".green
+      puts "\nYou guessed it! The number was #{num}.".green
       puts "You used #{guesses} guesses.".green
       break
     end
@@ -81,8 +79,7 @@ def hoc_logic(range)
     diff = (guess - num).abs
 
     if guess == num
-      puts ""
-      puts "You guessed it! The number was #{num}.".green
+      puts "\nYou guessed it! The number was #{num}.".green
       puts "You used #{guesses} guesses.".green
       break
     elsif diff <= 2
@@ -122,8 +119,7 @@ def play_reverse()
     elsif ans == "l"
       u_bound = guess - 1
     elsif ans == "c"
-      puts ""
-      puts "Yay! The number indeed was #{guess}.".green
+      puts "\nYay! The number indeed was #{guess}.".green
       puts "I got it in #{guesses} guess(es).".green
       break
     end

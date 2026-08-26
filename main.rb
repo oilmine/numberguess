@@ -15,8 +15,7 @@ begin
   print "Binary   |   "
   print "HoC   |   "
   print "Reverse   |  "
-  puts "\n\n"
-  print "CHOOSE THE GAMEMODE: "
+  puts "\n\nCHOOSE THE GAMEMODE: "
   gm = gets.chomp
   gm = gm.downcase
   puts ""
@@ -31,8 +30,7 @@ begin
     print "Medium   |   "
     print "Hard   |   "
     print "Custom   |   "
-    puts "\n\n"
-    print "CHOOSE THE DIFFICULTY: "
+    puts "\n\nCHOOSE THE DIFFICULTY: "
     df = gets.chomp
     df = df.downcase
     puts ""
@@ -61,8 +59,7 @@ begin
     print "|   Easy   |   "
     print "Medium   |   "
     print "Hard   |   "
-    puts "\n\n"
-    print "CHOOSE THE DIFFICULTY: "
+    puts "\n\nCHOOSE THE DIFFICULTY: "
     df = gets.chomp.downcase
     puts ""
 
