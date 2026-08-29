@@ -26,8 +26,8 @@ def cl_cs_logic()
   print "Enter maximum number: "
   cus_max = gets.chomp.to_i
   print "Enter guess amount: "
-
   guess_amount = gets.chomp.to_i
+  
   guesses = 0
   num = rand(cus_min..cus_max)
 
@@ -100,7 +100,7 @@ def hoc_logic(range)
   end
 end  
 
-def play_reverse()
+def reverse_logic()
   puts "Enter lower bound: "
   l_bound = gets.chomp.to_i
   puts "Enter upper bound: "

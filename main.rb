@@ -77,7 +77,7 @@ begin
   end
 
   if gm == "reverse"
-    play_reverse
+    reverse_logic
   end
 end
 rescue Interrupt
