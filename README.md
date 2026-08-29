@@ -1,7 +1,7 @@
-### 🔢 NumberGuess
+<h2>🔢 NumberGuess</h2>
 A simple number guessing game in your terminal, built with Ruby!
 
-🎮 Gamemodes:
+<h3>🎮 GAMEMODES: </h3>
 
 - 📻 Classic (guess the number with infinite guesses)
 - 1️⃣ Binary (you only get one chance to pick either 0 or 1)
