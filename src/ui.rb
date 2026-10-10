@@ -10,4 +10,5 @@ def title
   puts "#".cyan * 40
   puts "             NUMBERGUESS            "
   puts "#".cyan * 40
+  puts
 end

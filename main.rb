@@ -10,7 +10,7 @@ begin
   gm_lvl = ["classic", "binary", "hoc", "reverse"]
   df_lvl = ["easy", "medium", "hard", "custom"]
 
-  puts "\n____________________________________________________"
+  puts "____________________________________________________"
   print "|   Classic   |   "
   print "Binary   |   "
   print "HoC   |   "
@@ -78,6 +78,16 @@ begin
 
   if gm == "reverse"
     reverse_logic
+  end
+
+  puts "\nPlay again (Y/N)?"
+  rp = gets.chomp.upcase
+  
+  if rp == "Y"
+    clear
+  else
+    clear
+    exit
   end
 end
 rescue Interrupt
